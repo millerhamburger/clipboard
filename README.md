@@ -102,6 +102,13 @@ npm run dev
 npm run type-check
 ```
 
+## 包体积
+
+- 发布包默认不包含 `*.map`，通过 `prepublishOnly` 清理 `dist/**/*.map`，有效降低体积
+- 构建启用 Terser 的 `compress + mangle`，进一步压缩并进行轻量混淆
+- 实测 `npm pack`（v1.0.3）：`package size ≈ 4.2 kB`，`unpacked size ≈ 12.9 kB`
+- 验证方式：在项目根目录运行 `npm pack` 查看包内文件和体积
+
 ## 许可证
 
 MIT

@@ -103,6 +103,13 @@ npm run dev
 npm run type-check
 ```
 
+## Package Size
+
+- Source maps (`*.map`) are excluded from the published package via `prepublishOnly` cleanup of `dist/**/*.map`
+- Terser `compress + mangle` is enabled for minification and light obfuscation
+- Verified with `npm pack` (v1.0.3): `package size ≈ 4.2 kB`, `unpacked size ≈ 12.9 kB`
+- To verify locally, run `npm pack` in the project root and inspect the tarball contents
+
 ## License
 
 MIT
